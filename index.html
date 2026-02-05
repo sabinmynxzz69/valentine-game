@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: pink;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 { color: #c2185b; }
+    button {
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .yes { background: #ff4081; color: white; }
+    .no { background: #f8bbd0; }
+  </style>
+</head>
+<body>
+
+<h1 id="question">Hey love 💕</h1>
+<p id="text">Will you be my Valentine?</p>
+
+<button class="yes" onclick="yesClick()">Yes 💖</button>
+<button class="no" onclick="noClick()">Hmm…</button>
+
+<script>
+let noCount = 0;
+
+function yesClick() {
+  document.body.innerHTML = `
+    <h1>YAYYY 💘</h1>
+    <p>You just made me the happiest person ever.</p>
+    <p>I love you ❤️</p>
+  `;
+}
+
+function noClick() {
+  noCount++;
+  const messages = [
+    "Are you sure? 🥺",
+    "Think again, pretty please 💕",
+    "I brought chocolate 🍫",
+    "Okay but I love you 😭❤️"
+  ];
+  document.getElementById("text").innerText =
+    messages[Math.min(noCount, messages.length - 1)];
+}
+</script>
+
+</body>
+</html>
+
